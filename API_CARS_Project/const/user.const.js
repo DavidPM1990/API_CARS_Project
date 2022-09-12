@@ -5,5 +5,5 @@ const ROLES = [USER, ADMIN];
 
 module.exports = {
     USER,
-    ADMIN
+    ADMIN,
 }
