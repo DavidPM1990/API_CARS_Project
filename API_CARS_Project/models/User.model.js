@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { ROLES, USER } = require('../const/user.const')
+const { ROLES, USER, GUEST } = require('../const/user.const')
 // const bcrypt = require('bcryptjs');
 // const SALT = +process.env.SALT;
 
@@ -15,7 +15,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       enum: ROLES,
-      default: USER
+      default: GUEST
     }
   },
   {
@@ -24,6 +24,6 @@ const userSchema = new Schema(
   }
 );
 
-const User = model("user", userSchema);
+const userModel = model("user", userSchema);
 
-module.exports = User;
+module.exports = userModel;
