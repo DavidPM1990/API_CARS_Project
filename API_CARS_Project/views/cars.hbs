@@ -1,1 +1,34 @@
-<h1>Aqui van los coches</h1>
+<div class="container mt-3">
+  <h1>List of cars </h1>
+  <div class="row">
+    {{#if brands}}
+    {{#each brands}}
+      <div class="card-body card col-3 m-2">
+        <h5 class="card-title">{{model}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{class}}</h6>
+        <p class="card-text">Brand: {{make}}</p>
+        <p class="card-text">Fuel type: {{fuel_type}}</p>
+        <p class="card-text">Miles per gallon in the city: {{city_mpg}}, in Highway: {{combination_mpg}}</p>
+        <p class="card-text">Year of making: {{year}}</p>
+        <a href="#" class="card-link">Post about this car</a>
+      </div>
+     {{/each}}
+     {{/if}}
+    {{#if models}}
+    {{#each models}}
+      <div class="card-body card col-3 m-2">
+        <h5 class="card-title">{{model}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{class}}</h6>
+        <p class="card-text">Brand: {{make}}</p>
+        <p class="card-text">Fuel type: {{fuel_type}}</p>
+        <p class="card-text">Miles per gallon in the city: {{city_mpg}}, in Highway: {{combination_mpg}}</p>
+        <p class="card-text">Year of making: {{year}}</p>
+        <a href="#" class="card-link">Post about this car</a>
+      </div>
+     {{/each}}
+     {{/if}}
+  </div>
+</div>
+ 
+
+

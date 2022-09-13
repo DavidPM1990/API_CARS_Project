@@ -13,9 +13,9 @@ router.get('/auth/login', (req, res) => {
     res.render('auth/login');
 });
 
-router.get('/cars', (req, res) => {
-    res.render('cars');
-});
+// router.get('/cars', (req, res) => {
+//     res.render('cars');
+// });
 
 router.get('/post/view_post', (req, res) => {
     res.render('post/view_post');
