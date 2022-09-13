@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const { ROLES, USER, GUEST } = require('../const/user.const')
-// const bcrypt = require('bcryptjs');
-// const SALT = +process.env.SALT;
+const bcrypt = require('bcryptjs');
+const SALT = +process.env.SALT;
 
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema(
@@ -10,7 +10,7 @@ const userSchema = new Schema(
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true, minlength: 8 },
     profileImg: { type: String },
-    description: { type: String, default: 'Description doesn`t exist!' },
+
     role: {
       type: String,
       required: true,
@@ -23,6 +23,8 @@ const userSchema = new Schema(
     timestamps: true,
   }
 );
+
+
 
 const userModel = model("user", userSchema);
 
