@@ -10,3 +10,40 @@ a {
 h1 {
   color: 15px;
 } */
+
+h1 {
+  font-family: orbitron;
+  font-size: 80px;
+  text-align: center;
+  position: relative;
+  padding-top: 80px;
+}
+
+h2 {
+  font-family: orbitron;
+  position: relative;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.body_bkg {
+  background-image: url(../images/carretera\ bosque.jpg);
+  width: 100%;
+  height: 85vh;
+  background-size: cover;
+  background-position: center;
+
+
+}
+
+footer {
+  bottom: 0%;
+  height: 5vh;
+  width: 100%;
+  position: absolute;
+
+}
+
+.navBar-vh {
+  height: 10vh;
+}

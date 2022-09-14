@@ -1,1 +1,15 @@
-<h1>New Post</h1>
+<form action="/post/make-post" method="POST">
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+        <h5 class="card-header">
+            <label for="">Title</label>
+            <input type="text" name="title" required="required">
+        </h5>
+        <div class="card-body">
+            <h5 class="card-title">
+                <label for="">Description</label>
+                <textarea type="text" name="{{user}}" required="required"></textarea>
+            </h5>
+            <button type="submit">Post It!</button>
+        </div>
+    </div>
+</form>
