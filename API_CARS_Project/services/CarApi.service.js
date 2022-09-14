@@ -10,6 +10,10 @@ class AxiosCarsInfo {
         })
     }
 
+    getSingleCar(){
+        
+    }
+
     getCarBrand(brand){
         return this.axios.get(`/cars?limit=30&make=${brand}`)
         .then((res) => res.data)
@@ -19,6 +23,7 @@ class AxiosCarsInfo {
         return this.axios.get(`/cars?limit=30&model=${model}`)
         .then((res) => res.data)
     }
+
 
     getCarsByYear(year){
         return this.axios.get(`/cars?limit=30&year=${year}`)

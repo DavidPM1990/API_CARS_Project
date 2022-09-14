@@ -9,9 +9,23 @@
         <p class="card-text">Brand: {{make}}</p>
         <p class="card-text">Fuel type: {{fuel_type}}</p>
         <p class="card-text">Miles per gallon in the city: {{city_mpg}}, in Highway: {{combination_mpg}}</p>
+        <p class="card-text">Cylinders: {{cylinders}}</p>
+        <p class="card-text">Transmission: {{transmission}}</p>
         <p class="card-text">Year of making: {{year}}</p>
-        <a href="#" class="card-link">Post about this car</a>
+      <form action="/post/make-post" method="POST">
+        <input type="hidden" name="model" value="{{model}}"/>
+        <input type="hidden" name="carClass" value="{{class}}">
+        <input type="hidden" name="make" value="{{make}}">
+        <input type="hidden" name="fuel_type" value="{{fuel_type}}">
+        <input type="hidden" name="city_mpg" value="{{city_mpg}}">
+        <input type="hidden" name="combination_mpg" value="{{combination_mpg}}">
+        <input type="hidden" name="cylinders" value="{{cylinders}}">
+        <input type="hidden" name="transmission" value="{{transmission}}">
+        <input type="hidden" name="year" value="{{year}}">
+        <button type="submit">Post about this car</button>
+        </form>
       </div>
+
      {{/each}}
      {{/if}}
     {{#if models}}
@@ -22,13 +36,29 @@
         <p class="card-text">Brand: {{make}}</p>
         <p class="card-text">Fuel type: {{fuel_type}}</p>
         <p class="card-text">Miles per gallon in the city: {{city_mpg}}, in Highway: {{combination_mpg}}</p>
+        <p class="card-text">Cylinders: {{cylinders}}</p>
+        <p class="card-text">Transmission: {{transmission}}</p>
         <p class="card-text">Year of making: {{year}}</p>
-        <a href="#" class="card-link">Post about this car</a>
+      <form action="/post/make-post" method="POST">
+        <input type="hidden" name="model" value="{{model}}"/>
+        <input type="hidden" name="class" value="{{class}}">
+        <input type="hidden" name="make" value="{{make}}">
+        <input type="hidden" name="fuel_type" value="{{fuel_type}}">
+        <input type="hidden" name="city_mpg" value="{{city_mpg}}">
+        <input type="hidden" name="combination_mpg" value="{{combination_mpg}}">
+        <input type="hidden" name="cylinders" value="{{cylinders}}">
+        <input type="hidden" name="transmission" value="{{transmission}}">
+        <input type="hidden" name="year" value="{{year}}">
+        <button type="submit">Post about this car</button>
+        </form>
       </div>
+
      {{/each}}
      {{/if}}
   </div>
 </div>
  
 
+
+   
 
