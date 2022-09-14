@@ -1,8 +1,29 @@
 <div class="container">
-<h1>Aqui va el post recien creado</h1>
+  <h2>Aqui va el post recien creado</h2>
+</div>
 
+<div class="container">
+  <div class="d-flex flex-row">
+    <div class="card-body card col-3 m-2">
+      <h5 class="card-title">{{carId.model}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{carId.class}}</h6>
+      <p class="card-text">Brand: {{carId.make}}</p>
+      <p class="card-text">Fuel type: {{carId.fuel_type}}</p>
+      <p class="card-text">Miles per gallon in the city:
+        {{carId.city_mpg}}, in Highway:
+        {{carId.combination_mpg}}</p>
+      <p class="card-text">Cylinders: {{carId.cylinders}}</p>
+      <p class="card-text">Transmission: {{carId.transmission}}</p>
+      <p class="card-text">Year of making: {{carId.year}}</p>
+    </div>
+    <div class="card-body card col-3 m-2">
+        <h5 class="card-title">Title: {{title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Post: {{description}}</h6>
+        <p class="card-text">Time of creation: {{createdAt}}</p>
+    </div>
+  </div>
+</div>
 
-
-<a href="/post/view-all-posts">Ir a todos los posts</a>
-
+<div class="container">
+  <a  href="/post/view-all-posts">Ir a todos los posts</a>
 </div>
