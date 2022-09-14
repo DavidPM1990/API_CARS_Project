@@ -2,6 +2,7 @@ const router = require("express").Router()
 const bcrypt = require('bcryptjs')
 const userModel = require("../models/User.model")
 const saltRounds = 10
+const { USER, ADMIN } = require('../const/user.const');
 
 // GET
 

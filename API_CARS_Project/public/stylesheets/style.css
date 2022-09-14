@@ -29,20 +29,23 @@ h2 {
 .body_bkg {
   background-image: url(../images/carretera\ bosque.jpg);
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   background-size: cover;
   background-position: center;
+  position: relative;
 
 
 }
 
+/* 
 footer {
-  bottom: 0%;
-  height: 5vh;
   width: 100%;
-  position: absolute;
+  bottom: 0%;
+  height: 10vh;
+  width: 100%;
+  position: fixed;
 
-}
+} */
 
 .navBar-vh {
   height: 10vh;

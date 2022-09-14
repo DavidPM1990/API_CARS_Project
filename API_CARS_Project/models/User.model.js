@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-const { ROLES, USER, GUEST } = require('../const/user.const')
+const { ROLES, USER } = require('../const/user.const')
 
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema(
