@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs')
 const userModel = require("../models/User.model")
 const saltRounds = 10
 
-// GET
+//  --------------------- GET -------------------
 
 router.get('/auth/signup', (req, res) => {
     res.render('auth/signup');
@@ -14,16 +14,12 @@ router.get('/auth/login', (req, res) => {
 });
 
 
-router.get('/post/view_post', (req, res) => {
-    res.render('post/view_post');
-});
-
 router.get('/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/auth/login');
 });
 
-// POST
+// -------------------------- POST --------------------
 
 router.post('/auth/signup', (req, res, next) => {
 
@@ -42,35 +38,6 @@ router.post('/auth/signup', (req, res, next) => {
         .catch(error => next(error))
 })
 
-
-// router.post('/auth/signup', (req, res) => {
-//     const { username, email, password } = req.body;
-
-//     userModel
-//         .create({ username, email, password })
-//         .then((newUser) => {
-//             res.redirect("/")
-//         })
-//         .catch((err) => {
-//             console.error(err);
-//             res.render('auth/signup', { messageError: 'Ha ocurrido un error' });
-//         })
-
-// });
-
-// router.post('/auth/login', (req, res) => {
-//     const { username, email, password, } = req.body;
-//     userModel
-//         .findOne({ username, email, password })
-//         .then(() => {
-//             res.redirect("/cars")
-//         })
-//         .catch((err) => {
-//             console.error(err);
-
-//         })
-
-// });
 
 router.post('/auth/login', (req, res, next) => {
 
@@ -94,8 +61,38 @@ router.post('/auth/login', (req, res, next) => {
             }
         })
         .catch(error => next(error))
-})
+    })
 
-
-
-module.exports = router;
+    
+    
+    module.exports = router;
+    
+    
+    // router.post('/auth/signup', (req, res) => {
+    //     const { username, email, password } = req.body;
+    
+    //     userModel
+    //         .create({ username, email, password })
+    //         .then((newUser) => {
+    //             res.redirect("/")
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    //             res.render('auth/signup', { messageError: 'Ha ocurrido un error' });
+    //         })
+    
+    // });
+    
+    // router.post('/auth/login', (req, res) => {
+    //     const { username, email, password, } = req.body;
+    //     userModel
+    //         .findOne({ username, email, password })
+    //         .then(() => {
+    //             res.redirect("/cars")
+    //         })
+    //         .catch((err) => {
+    //             console.error(err);
+    
+    //         })
+    
+    // });

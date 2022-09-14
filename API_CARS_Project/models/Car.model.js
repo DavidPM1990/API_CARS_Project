@@ -11,6 +11,7 @@ const carSchema = new Schema(
         cylinders: {type: Number},
         transmission: {type: String},
         year: {type: Number},
+        post: [{type: Schema.Types.ObjectId, ref: "post"}]
     },
 
     {

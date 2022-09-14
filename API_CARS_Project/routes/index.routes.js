@@ -9,10 +9,6 @@ const axiosCars = new AxiosCarsInfo();
 router.get("/", (req, res, next) => {
   res.render("index");
 });
-
-// router.get("/cars", (req, res, next) => {
-  //   res.render("cars");
-  // });
   
   
   router.get('/cars', (req, res, next) => {

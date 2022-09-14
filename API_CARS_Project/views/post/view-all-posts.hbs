@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>All the posts</h1>
+
+    {{#each allPosts}}
+<div class="row d-flex flex-column card ">
+    <h2 class="d-flex justify-content-start">Title: {{title}}</h2>
+    <h6>Post content: {{description}}</h6>
+    <p><em> Time of creation: {{createdAt}}</em></p>
+
+    <a href="">See full post</a>
+    <a href="">Comment on this post</a>
+
+
+</div>
+    {{/each}}
+
+</div>
