@@ -17,13 +17,22 @@
       <p class="card-text">Year of making: {{carId.year}}</p>
     </div>
     <div class="card-body card col-3 m-2">
-        <h5 class="card-title">Title: {{title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Post: {{description}}</h6>
+        <img src={{author.profileImg}} alt="profile image" width="75px">
+        <h6 class="card-title">User: {{author.username}}</h6>
+        <h6 class="card-subtitle mb-2">Contact e-mail: {{author.email}}</h6>
+        <h5 class="card-title mt-4">Title: {{title}}</h5>
+        <h6 class="card-subtitle mb-2">Description: {{description}}</h6>
         <p class="card-text">Time of creation: {{createdAt}}</p>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <a  href="/post/view-all-posts">Ir a todos los posts</a>
+<div class="container mt-2">
+
+  <form  action="/post/view-post/delete/{{_id}}" method="POST">
+    <button type="submit">Delete this post</button>
+  </form>
+  <div class="mt-3">
+  <a  href="/post/view-all-posts">See all the posts</a>
+  </div>
 </div>

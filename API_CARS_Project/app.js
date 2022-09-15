@@ -37,6 +37,9 @@ app.use("/", auth);
 const post = require("./routes/post.routes");
 app.use("/", post);
 
+const comment = require("./routes/comment.routes");
+app.use("/", comment);
+
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes

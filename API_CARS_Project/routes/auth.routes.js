@@ -24,7 +24,6 @@ router.get('/logout', (req, res) => {
 
 router.post('/auth/signup', (req, res, next) => {
 
-    console.log(req.body)
 
     const { username, email, password } = req.body
 
