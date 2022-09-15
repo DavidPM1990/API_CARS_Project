@@ -1,65 +1,65 @@
-<section class="text-center min-vh-80">
-    <!-- Background image -->
-    <div class="p-5 bg-image" style="
+<div class="post-screen">
+    <section class="text-center min-vh-80">
+        <!-- Background image -->
+        <div class="p-5 bg-image" style="
         background-image: url('https://mdbootstrap.com/img/new/textures/full/221.jpg');
         height: 180px;
         "></div>
-    <!-- Background image -->
+        <!-- Background image -->
 
-    <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        <div class="card mx-4 mx-md-5 shadow-5-strong" style="
         margin-top: -100px;
         background: hsla(0, 0%, 100%, 0.8);
         backdrop-filter: blur(30px);
         ">
-        <div class="card-body  px-md-5">
+            <div class="card-body  px-md-5">
 
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-8">
-                    <h2 class="fw-bold mb-5">Log In</h2>
-                    <form action="/auth/login" method="POST">
-                        <!-- 2 column grid layout with text inputs for the first and last names -->
-                        <div class="row">
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="text" id="form3Example1" class="form-control" name="username" />
-                                    <label class="form-label" for="form3Example1"
-                                        placeholder="Username">Username</label>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="fw-bold mb-5">Log In</h2>
+                        <form action="/auth/login" method="POST">
+                            <!-- 2 column grid layout with text inputs for the first and last names -->
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" id="form3Example1" class="form-control" name="username" />
+                                        <label class="form-label" for="form3Example1"
+                                            placeholder="Username">Username</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="password" id="form3Example2" class="form-control"
+                                            name="password" />
+                                        <label class="form-label" for="form3Example2"
+                                            placeholder="password">Password</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-4">
-                                <div class="form-outline">
-                                    <input type="password" id="form3Example2" class="form-control" name="password" />
-                                    <label class="form-label" for="form3Example2"
-                                        placeholder="password">Password</label>
-                                </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-dark btn-block mb-4">
+                                Sign up
+                            </button>
+
+                            {{#if errorMessage}}
+                            <div id="errorMessage">
+                                <p>{{errorMessage}}</p>
                             </div>
-                        </div>
+                            {{/if}}
 
-                        <!-- Submit button -->
-                        <button type="submit" class="btn btn-dark btn-block mb-4">
-                            Sign up
-                        </button>
-
-                        {{#if errorMessage}}
-                        <div id="errorMessage">
-                            <p>{{errorMessage}}</p>
-                        </div>
-                        {{/if}}
-
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
 <div class="footer">
-    <footer class="bg-light text-center text-lg-start">
-
+    <footer class="bg-light text-center text-lg-start footer-page">
         <div class="text-center p-4 bg-dark text-white-50" style="background-color: rgba(0, 0, 0, 1.0);">
             © 2022 Copyright: Guzmán Ponce de León and David Pardo
-
         </div>
-
     </footer>
 </div>

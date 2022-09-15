@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>Aqui va el post recien creado</h2>
+  <h2>Car's Post</h2>
 </div>
 
 <div class="container">
@@ -17,38 +17,27 @@
       <p class="card-text">Year of making: {{carId.year}}</p>
     </div>
     <div class="card-body card col-3 m-2">
-        <img src={{author.profileImg}} alt="profile image" width="75px">
-        <h6 class="card-title">User: {{author.username}}</h6>
-        <h6 class="card-subtitle mb-2">Contact e-mail: {{author.email}}</h6>
-        <h5 class="card-title mt-4">Title: {{title}}</h5>
-        <h6 class="card-subtitle mb-2">Description: {{description}}</h6>
-        <p class="card-text">Time of creation: {{createdAt}}</p>
+      <img src={{author.profileImg}} alt="profile image" width="75px">
+      <h6 class="card-title">User: {{author.username}}</h6>
+      <h6 class="card-subtitle mb-2">Contact e-mail: {{author.email}}</h6>
+      <h5 class="card-title mt-4">Title: {{title}}</h5>
+      <h6 class="card-subtitle mb-2">Description: {{description}}</h6>
+      <p class="card-text">Time of creation: {{createdAt}}</p>
     </div>
   </div>
 </div>
 
-<div class="container pb-4">
+<div class="d-flex flex-row justify-content-around mt-1">
   <a class="btn btn-dark btn-block mt-2 mx-2" href="/post/view-all-posts">Ir a todos los posts</a>
-</div>
-
-<div class="container">
-  <a class="btn btn-dark btn-block mx-2" href="/post/edit-post/{{id}}">Edit post</a>
-</div>
-<div class="container mt-2">
-
-  <form  action="/post/view-post/delete/{{_id}}" method="POST">
-    <button type="submit">Delete this post</button>
+  <a class="btn btn-dark btn-block mt-2 mx-2" href="/post/edit-post/{{id}}">Edit post</a>
+  <form action="/post/view-post/delete/{{_id}}" method="POST">
+    <button class="btn btn-dark btn-block mt-2 mx-2" type="submit">Delete this post</button>
   </form>
-  <div class="mt-3">
-  <a  href="/post/view-all-posts">See all the posts</a>
-  </div>
+  <a class="btn btn-dark btn-block mt-2 mx-2" href="/post/view-all-posts">See all the posts</a>
 </div>
 
 <footer class="bg-light text-center text-lg-start pt-5">
-
   <div class="text-center p-3 bg-dark text-white-50" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2022 Copyright: Guzmán Ponce de León and David Pardo
-
   </div>
-
 </footer>
