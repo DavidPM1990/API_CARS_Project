@@ -27,15 +27,45 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="d-flex flex-column ">
+    {{#each comments}}
+    <div class="p-2">
+        <img src={{user.profileImg}} alt="profile image" width="75px">
+    <h6 class="card-subtitle mb-2">Comment author: {{user.username}}</h6>
+    <p>{{comment}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+
+<div class="container d-flex">
+<form action="/comment" method="post">
+
+  <label for="" >Comment</label>
+  <input type="text" name="comment" placeholder="What's your comment?" id="">
+
+  <input type="hidden" name="post" value="{{_id}}">
+  {{!-- <input type="text" name="user" value="{{author.username}}"> --}}
+
+  <button type="submit">New Comment</button>
+</form>
+</div>
+
 <div class="container pb-4">
   <a class="btn btn-dark btn-block mt-2 mx-2" href="/post/view-all-posts">Ir a todos los posts</a>
 </div>
 
 <div class="container">
-  <a class="btn btn-dark btn-block mx-2" href="/post/edit-post/{{id}}">Edit post</a>
+  <a class="btn btn-dark btn-block mx-2" href="/comment/comment-post/{{id}}">Comment on this post</a>
 </div>
-<div class="container mt-2">
 
+<div class="container">
+  <a class="btn btn-dark btn-block m-2" href="/post/edit-post/{{id}}">Edit post</a>
+</div>
+
+<div class="container mt-2">
   <form  action="/post/view-post/delete/{{_id}}" method="POST">
     <button type="submit">Delete this post</button>
   </form>
