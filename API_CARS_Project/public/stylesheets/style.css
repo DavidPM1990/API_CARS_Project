@@ -3,7 +3,7 @@ h1 {
   font-size: 80px;
   text-align: center;
   position: relative;
-  padding-top: 80px;
+  padding-top: 50px;
   margin-bottom: 50px;
 }
 
@@ -17,17 +17,18 @@ h2 {
 .body_bkg {
   background-image: url(../images/carretera\ bosque.jpg);
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   background-size: cover;
   background-position: center;
 
 }
 
-.navBar-vh {
-  height: 10vh;
-}
-
-.footer {
+/* .footer {
   margin-top: 105px;
-  height: 10vh
+  height: 20vh;
+} */
+
+.post-screen {
+  width: 100%;
+  height: 80vh;
 }
