@@ -10,7 +10,7 @@ router.get("/post/view-all-posts", (req, res, next) => {
   postModel.find().then((allPosts) => {
     res.render("post/view-all-posts", { allPosts });
   })
-  .catch((err) => next(err));
+    .catch((err) => next(err));
 });
 
 router.get('/post/view-post/:id', (req, res, next) => {
@@ -31,10 +31,20 @@ router.get("/post/make-post/:id", isLoggedin, (req, res, next) => {
   res.render("post/make-post", { id })
 });
 
+router.get("/post/edit-post/:id", (req, res, next) => {
+  const { id } = req.params;
+  postModel
+    .findById(id)
+    .then(post => {
+      res.render("post/edit-post", post)
+    })
+    .catch((err) => next(err))
+});
+
 // ---------------------- POST -----------------------
 
 router.post("/post/make-post", (req, res, next) => {
-  const { model, carClass, make, fuel_type, city_mpg, combination_mpg, cylinders, transmission, year,} = req.body;
+  const { model, carClass, make, fuel_type, city_mpg, combination_mpg, cylinders, transmission, year, } = req.body;
 
   carModel
     .create({ model, carClass, make, fuel_type, city_mpg, combination_mpg, cylinders, transmission, year, })
@@ -76,7 +86,16 @@ router.post("/post/submit-post/:id", isLoggedin, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-// Que las rutas solo puedan ejecutarlas los creadores del post
-// happy code :D
+router.post('/post/edit-post/:id', (req, res, next) => {
+  const updatedPost = req.params.id
+  const { title, description } = req.body;
+  postModel.findByIdAndUpdate(updatedPost, { title, description })
+    .then((editPost) => {
+      console.log(editPost)
+      res.redirect(`/post/view-post/${editPost._id}`);
+    })
+    // Utilizamos el next(err) para controlar el error
+    .catch((err) => next(err));
+});
 
 module.exports = router;

@@ -1,20 +1,29 @@
 <div class="container d-flex justify-content-center">
-    <div >
-    <h2>Make a post on the chosen car</h2>
-<form action="/post/submit-post/{{id}}" method="POST" class="d-flex justify-content-center mt-4">
-    <div class="card bg-light mb-3" style="max-width: 18rem;">
-        <h5 class="card-header">
-            <label for="">Title</label>
-            <input type="text" name="title" required="required">
-        </h5>
-        <div class="card-body">
-            <h5 class="card-title">
-                <label for="">Description</label>
-                <textarea type="text" name="description" required="required"></textarea>
-            </h5>
-            <button type="submit">Post It!</button>
-        </div>
+    <div>
+        <h2>Make a post on the chosen car</h2>
+        <form action="/post/submit-post/{{id}}" method="POST" class="d-flex justify-content-center mt-4">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <h5 class="card-header">
+                    <label for="">Title</label>
+                    <input type="text" name="title" required="required">
+                </h5>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <label for="">Description</label>
+                        <textarea type="text" name="description" required="required"></textarea>
+                    </h5>
+                    <button type="submit">Post It!</button>
+                </div>
+            </div>
+        </form>
     </div>
-</form>
 </div>
-</div>
+
+<footer class="bg-light text-center text-lg-start pt-3">
+
+    <div class="text-center p-3 bg-dark text-white-50" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright: Guzmán Ponce de León and David Pardo
+
+    </div>
+
+</footer>

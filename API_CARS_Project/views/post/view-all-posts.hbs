@@ -2,16 +2,28 @@
     <h1>All the posts</h1>
 
     {{#each allPosts}}
-<div class="row d-flex flex-column card ">
-    <h2 class="d-flex justify-content-start">Title: {{title}}</h2>
-    <h6>Post content: {{description}}</h6>
-    <p><em> Time of creation: {{createdAt}}</em></p>
+    <div class="row d-flex flex-column card mb-4">
+        <h2 class="d-flex justify-content-start">Title: {{title}}</h2>
+        <h6>Post content: {{description}}</h6>
+        <p><em> Time of creation: {{createdAt}}</em></p>
 
-    <a href="">See full post</a>
-    <a href="">Comment on this post</a>
+        <div>
+            <a class="btn btn-dark btn-block mb-4" href="/post/view-post/{{id}}">See full post</a>
+        </div>
+        <div>
+            <a class="btn btn-dark btn-block mb-4" href="">Comment on this post</a>
+        </div>
 
-
-</div>
+    </div>
     {{/each}}
 
 </div>
+
+<footer class="bg-light text-center text-lg-start pt-3">
+
+    <div class="text-center p-3 bg-dark text-white-50" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright: Guzmán Ponce de León and David Pardo
+
+    </div>
+
+</footer>
