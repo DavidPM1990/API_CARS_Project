@@ -17,13 +17,26 @@
       <p class="card-text">Year of making: {{carId.year}}</p>
     </div>
     <div class="card-body card col-3 m-2">
-        <h5 class="card-title">Title: {{title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Post: {{description}}</h6>
-        <p class="card-text">Time of creation: {{createdAt}}</p>
+      <h5 class="card-title">Title: {{title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Description: {{description}}</h6>
+      <p class="card-text">Time of creation: {{createdAt}}</p>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <a  href="/post/view-all-posts">Ir a todos los posts</a>
+<div class="container pb-4">
+  <a class="btn btn-dark btn-block mt-2 mx-2" href="/post/view-all-posts">Ir a todos los posts</a>
 </div>
+
+<div class="container">
+  <a class="btn btn-dark btn-block mx-2" href="/post/edit-post/{{id}}">Edit post</a>
+</div>
+
+<footer class="bg-light text-center text-lg-start pt-5">
+
+  <div class="text-center p-3 bg-dark text-white-50" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright: Guzmán Ponce de León and David Pardo
+
+  </div>
+
+</footer>

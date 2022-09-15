@@ -1,10 +1,10 @@
 {
-  "name": "API_CARS_Project",
+  "name": "api-cars-project",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon -e hbs,css,js"
   },
   "dependencies": {
     "axios": "^0.27.2",

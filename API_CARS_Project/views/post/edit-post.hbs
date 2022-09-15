@@ -1,0 +1,20 @@
+<div class="container d-flex justify-content-center">
+    <div>
+        <h2>Edit a post on the chosen car</h2>
+        <form action="/post/edit-post/{{id}}" method="POST" class="d-flex justify-content-center mt-4">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <h5 class="card-header">
+                    <label for="">Title</label>
+                    <input type="text" name="title" value="{{title}}" required="required">
+                </h5>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <label for="">Description</label>
+                        <input type="text" name="description" value="{{description}}" required="required">
+                    </h5>
+                    <button type="submit">Edit It!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
