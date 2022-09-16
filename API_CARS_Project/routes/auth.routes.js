@@ -15,7 +15,7 @@ router.get('/auth/login', (req, res) => {
 });
 
 
-router.get('/logout', (req, res) => {
+router.get('/auth/logout', (req, res) => {
     req.session.destroy();
     res.redirect('/auth/login');
 });

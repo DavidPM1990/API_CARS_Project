@@ -43,7 +43,7 @@ router.get("/post/edit-post/:id", (req, res, next) => {
 
 // ---------------------- POST -----------------------
 
-router.post("/post/make-post", (req, res, next) => {
+router.post("/post/make-post", isLoggedin, (req, res, next) => {
   const { model, carClass, make, fuel_type, city_mpg, combination_mpg, cylinders, transmission, year, } = req.body;
 
   carModel
@@ -54,8 +54,9 @@ router.post("/post/make-post", (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.post('/post/view-post/delete/:id', isLoggedin, (req, res, next) =>{ 
+router.post('/post/view-post/delete/:id', (req, res, next) =>{ 
   let thisPostId = req.params.id
+  console.log(req.session.user._id)
   postModel.findById(thisPostId)
   .then((infoAboutPost) => {   
     
@@ -67,13 +68,14 @@ router.post('/post/view-post/delete/:id', isLoggedin, (req, res, next) =>{
       .then(() => res.redirect('/post/view-all-posts'))
 
     } else {
-      res.redirect(`/post/view-post/${thisPostId}`, { errorMessage: 'You are not allowed to delete this post' })
+      console.log('no entra nunca aca')
+      res.render(`post/view-post/${thisPostId}`, { errorMessage: 'You are not allowed to delete this post' })
     }
   })
   .catch(error => next(error));
   })
  
-  router.post('/post/edit-post/:id', (req, res, next) => {
+  router.post('/post/edit-post/:id', isLoggedin, (req, res, next) => {
     let updatedPost = req.params.id
     let { title, description } = req.body;
 
@@ -93,6 +95,8 @@ router.post('/post/view-post/delete/:id', isLoggedin, (req, res, next) =>{
         .catch((err) => next(err));
 
       } else {
+      console.log('no entra nunca aca')
+
         res.redirect(`/post/view-post/${updatedPost}`, { errorMessage: 'You are not allowed to edit this post' })
       }
     })

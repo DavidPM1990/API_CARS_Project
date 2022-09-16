@@ -7,10 +7,12 @@ const isLoggedin = require("../middleware/is-loggedin.middleware");
 
 // -------------------- GET -------------- 
 
+// -------------------- POST -------------- 
+
 router.post('/comment', isLoggedin, (req, res, next) => {
-    console.log(req.body)
-    const { user, comment, post } = req.body;
-    commentModel.create({ user, comment, post })
+    const { comment, post } = req.body;
+    commentModel
+      .create({ user: req.session.user._id, comment, post })
       .then((newComment) => {
         return postModel.updateOne(
           { _id: post },
@@ -23,9 +25,38 @@ router.post('/comment', isLoggedin, (req, res, next) => {
       .catch((err) => next(err));
   });
 
+  router.post('/comment/delete/:_id', (req, res, next) => {
+    let thisCommentId = req.params._id
+    
+    commentModel
+    .findById(thisCommentId)
+    .populate("user")
+    .then((infoAboutComment) => {
+
+      console.log(infoAboutComment)
+
+      if(infoAboutComment.user._id.toString() === req.session.user._id){
+        commentModel
+        .findByIdAndDelete(thisCommentId)
+        .then(() => res.redirect(`/post/view-post/${infoAboutComment.post}`))
+        .catch(e => console.log(e))
+      } 
+      else {
+        commentModel
+        .findById(thisCommentId)
+        .then(() => res.redirect(`/post/view-post/${infoAboutComment.post}`))
+        .catch(e => console.log(e))        
+
+        console.log("NO TIENEN LAS MISMA ID")
+      }
+    })
+    .catch(e => console.log(e)) 
+
+
+  })
 
 
 
-// -------------------- POST -------------- 
+
 
 module.exports = router;

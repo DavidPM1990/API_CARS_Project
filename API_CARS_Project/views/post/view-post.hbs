@@ -34,6 +34,10 @@
         <img src={{user.profileImg}} alt="profile image" width="75px">
     <h6 class="card-subtitle mb-2">Comment author: {{user.username}}</h6>
     <p>{{comment}}</p>
+      <form action="/comment/delete/{{_id}}" method="POST">
+    <button class="btn btn-dark btn-block mt-1 mx-1" type="submit">Delete this comment</button>
+      </form>
+    
     </div>
     {{/each}}
   </div>
@@ -45,9 +49,7 @@
 
   <label for="" >Comment</label>
   <input type="text" name="comment" placeholder="What's your comment?" id="">
-
   <input type="hidden" name="post" value="{{_id}}">
-  {{!-- <input type="text" name="user" value="{{author.username}}"> --}}
 
   <button type="submit">New Comment</button>
 </form>
@@ -59,6 +61,7 @@
   <form action="/post/view-post/delete/{{_id}}" method="POST">
     <button class="btn btn-dark btn-block mt-2 mx-2" type="submit">Delete this post</button>
   </form>
+
   <a class="btn btn-dark btn-block mt-2 mx-2" href="/post/view-all-posts">See all the posts</a>
 </div>
 
