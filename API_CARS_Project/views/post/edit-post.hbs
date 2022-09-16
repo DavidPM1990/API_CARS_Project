@@ -1,27 +1,29 @@
-<div class="container d-flex justify-content-center post-screen">
-    <div>
-        <h2>Edit a post on the chosen car</h2>
-        <form action="/post/edit-post/{{id}}" method="POST" class="d-flex justify-content-center mt-4">
-            <div class="card bg-light mb-3 my-3" style="width: 55rem;">
-                <h5 class="card-header">
-                    <label for="">Title</label>
-                    <input type="text" name="title" style="width: 34rem" value="{{title}}" required="required">
-                </h5>
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <label for="">Description</label>
-                        <input type="text" name="description" style="width: 30rem" value="{{description}}"
-                            required="required">
+<div class="bg-cars pb-3">
+    <div class="container d-flex justify-content-center post-screen">
+        <div>
+            <h2>Edit a post on the chosen car</h2>
+            <form action="/post/edit-post/{{id}}" method="POST" class="d-flex justify-content-center mt-4">
+                <div class="card bg-light mb-3 my-3" style="width: 55rem;">
+                    <h5 class="card-header">
+                        <label for="">Title</label>
+                        <input type="text" name="title" style="width: 34rem" value="{{title}}" required="required">
                     </h5>
-                    <div class="d-flex justify-content-center mt-5">
-                        <button class="btn btn-dark btn-block mt-2 mx-2" type="submit">Edit It!</button>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <label for="">Description</label>
+                            <input type="text" name="description" style="width: 30rem" value="{{description}}"
+                                required="required">
+                        </h5>
+                        <div class="d-flex justify-content-center mt-5">
+                            <button class="btn btn-dark btn-block mt-2 mx-2" type="submit">Edit It!</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
-<footer class="bg-light text-center text-lg-start pt-3 footer-page">
+<footer class="bg-light text-center text-lg-start footer-page">
     <div class="text-center p-3 bg-dark text-white-50" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2022 Copyright: Guzmán Ponce de León and David Pardo
     </div>
